@@ -22,9 +22,13 @@ shell> adb pull /system/framework
 ## Convert services to smali
 
 ### Android 4.4 or non-odex version (services.jar > 1M)
+
+```
 shell> java -Xms1g -jar baksmali-2.2b4.jar d services.jar -o services
+```
 
 ### Android 5.0 - Android 5.1
+
 ```
 shell> java -Xms1g -jar oat2dex.jar boot <path/to/boot.oat>
 shell> java -Xms1g -jar oat2dex.jar <path/to/services.odex> dex
